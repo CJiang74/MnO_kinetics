@@ -48,7 +48,7 @@ def plot_cyclopentene(df, potential, activity_water):
     ax.errorbar(
         df_cyclopentene["conc_cyclopentene"],
         df_cyclopentene["j_ketone"]["mean"],
-        yerr=df_cyclopentene["FE_ketone"]["std"],
+        yerr=df_cyclopentene["j_ketone"]["std"],
         fmt=".",
         label="Ketone",
         c=c_k,
@@ -57,7 +57,7 @@ def plot_cyclopentene(df, potential, activity_water):
     ax.set_ylabel("Current Density (mA/$cm^2$)", fontweight="bold")
     ax.set_xlabel("Cyclopentene Concentration (M)", fontweight="bold")
     ax.set_title(f"{potential} V vs.Fc/Fc$^+$, a$_w$ = {activity_water}")
-    ax.set_ylim(0, 10)
+    ax.set_ylim(-1, 10)
     ax.yaxis.set_minor_locator(AutoMinorLocator())
     ax.legend(loc="upper left")
     ax.set_box_aspect(0.8)
